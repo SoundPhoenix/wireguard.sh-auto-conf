@@ -15,7 +15,7 @@ echo "               ______
 
 
 #Check if the user is running the script in Linux
-if [ "$(uname)=Linux"]; then
+if [ "$(uname)=Linux" ]; then
     echo "Linux OS detected"
 else
     echo "This script is only for the Linux Operating System"
