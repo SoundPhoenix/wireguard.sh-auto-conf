@@ -57,3 +57,16 @@ else
     fi
 
 #Ask user if they want to enable port forwarding and if so what port
+read -p "Would you like to enable port forwarding? (Y/N):" choice
+if [ $choice -eq Y ]; then
+    echo "To enable port forwarding Please go to the directory /etc/
+    and run nano sysctl.conf and read the instructions."
+elif [ $choice -eq N ]; then
+    echo "OK!"
+else 
+    echo "Invalid choice. Please enter Y or N"
+    exit 1
+fi
+
+#Ask user what ip they would like to use for the ip tables 
+
