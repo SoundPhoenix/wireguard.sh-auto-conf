@@ -56,3 +56,4 @@ else
     exit 1
     fi
 
+#Ask user if they want to enable port forwarding and if so what port
