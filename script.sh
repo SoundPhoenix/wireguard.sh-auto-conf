@@ -8,15 +8,8 @@ echo "
       #                                                            #
       ##############################################################
       "
-function if [ -z "^C" ]; then
-    echo "CTRL-C detected exiting script..."
-    echo "Bye!"
-    exit 1
-fi
-
 #Press enter to continue with script
 read -p "Please press enter to continue." 
-fi 
 
 #Check if the user is running the script for debian systems
 if [ -f /etc/debian_version ]; then
