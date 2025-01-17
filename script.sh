@@ -1,26 +1,23 @@
 #welcome screen for the script
-echo "               ______
-                  .-"      "-.
-                 /            \
-                |              |
-                |,  .-.  .-.  ,|
-                | )(__/  \__)( |
-                |/     /\     \|
-      (@_       (_     ^^     _)
- _     ) \_______\__|IIIIII|__/__________________________
-(_)@8@8{}<________|-\IIIIII/-|______WIREGUARD INSTALL____>
-       )_/        \          /
-      (@           `--------` jgs
-      Script made by Tanner Schermerhorn (me@tannerschermerhorn.dev)"
+echo "##############################################################
+      #                 Wireguard Install Script!                  #
+      #                                                            #
+      #      This script will install Wireguard along with port    #
+      #       Forwarding and IP Tables for your linux Machine.     #
+      #                                                            #
+      ##############################################################"
 
+#Press enter to continue with script
+read -p "Please press enter to continue." 
+fi 
 
-#Check if the user is running the script in Linux
-if [ "$(uname)=Linux" ]; then
-    echo "Linux OS detected"
+#Check if the user is running the script for debian systems
+if [ -f /etc/debian_version ]; then
+    echo "You are running a Debian based system."
 else
-    echo "This script is only for the Linux Operating System"
+    echo "This script is only for Debian based systems. Please run this script on a Debian based system."
     exit 1
-    fi
+fi
 
 #Add wireguard.sh script below here and install curl if not already installed
 if curl --version &> /dev/null/; then
@@ -69,4 +66,11 @@ else
 fi
 
 #Ask user what ip they would like to use for the ip tables 
+read -p "What IP would you like to use for the IP tables? (X.X.X.X)" ip 
+if [ $ip -eq X.X.X.X ]; then
+    echo "Please enter a valid IP address."
+    exit 1
+else
+    echo "OK!"
+fi
 
