@@ -1,11 +1,18 @@
 #welcome screen for the script
-echo "##############################################################
+echo "
+      ##############################################################
       #                 Wireguard Install Script!                  #
       #                                                            #
       #      This script will install Wireguard along with port    #
       #       Forwarding and IP Tables for your linux Machine.     #
       #                                                            #
-      ##############################################################"
+      ##############################################################
+      "
+function if [ -z "^C" ]; then
+    echo "CTRL-C detected exiting script..."
+    echo "Bye!"
+    exit 1
+fi
 
 #Press enter to continue with script
 read -p "Please press enter to continue." 
